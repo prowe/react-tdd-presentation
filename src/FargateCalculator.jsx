@@ -1,5 +1,6 @@
 import { useState } from "react";
 import calculateFargateCost from './calculate-fargate-cost';
+import CostDisplay from "./CostDisplay";
 
 export default function FargateCalculator() {
     const [vCPU, setVCpu] = useState('');
@@ -48,6 +49,7 @@ export default function FargateCalculator() {
                 <dd aria-labelledby='monthly-cost-label'>${costs.monthlyCost.toFixed(2)}</dd>
             </dl>}
 
+            <CostDisplay costs={costs} />
         </div>
     );
 }
